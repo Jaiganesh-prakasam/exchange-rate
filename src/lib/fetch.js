@@ -11,6 +11,7 @@ export async function fetch(url) {
   const [, search = ""] = url.split("?");
   const params = new URLSearchParams(search);
   await sleep(400);
+  // eslint-disable-next-line
   const symbols = new Set((params.get("symbols") || "").split(","));
   const base = params.get("base");
   const rates = exchangeRates[base];
